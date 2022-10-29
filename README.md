@@ -77,3 +77,8 @@ CLIを使ってコントローラ(/cats)を作りたい!
 ```bash
 $nest g controller cats
 ```
+
+CLIでは、以下のコマンドでサービスを作れる。
+```bash
+$ nest g service cats
+```
