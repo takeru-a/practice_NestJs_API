@@ -73,3 +73,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 # practice_NestJs_API
 NestJSの練習です！
+CLIを使ってコントローラ(/cats)を作りたい!
+```bash
+$nest g controller cats
+```
