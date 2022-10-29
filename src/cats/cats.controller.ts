@@ -1,34 +1,18 @@
-import { Controller, Get, HttpStatus, Param, Post, Redirect, Req, Res } from '@nestjs/common';
-import { Response, Request} from 'express';
+import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Cat } from './interfaces/cat.interface';
+import { CatsService } from './cats.service';
+import { CreateCatDto } from './dto/create-cat.dto';
+
 @Controller('cats')
 export class CatsController {
-@Get()
-  findAll(): string {
-    return "This action returns all cats";
-  }
+    constructor(private catService: CatsService){}
 
-  //@Req リクエストを取得
-  @Get("/hello")
-  Hello(@Req() req: Request): string {
-    return `${req.hostname}, Hello!`;
-  }
-
-  @Get("/res")
-  Response(@Res() res: Response){
-    return res.status(HttpStatus.OK).json([]);
-  }
-
-  //ルートパラメータ
-  @Get(':id')
-  RootParam(@Param('id') id): string{
-    return `${id}匹目の猫！`;
-  }
-//リダイレクト
-  @Get("/redirect")
-  @Redirect('https://nestjs.com/')
-
-  @Post()
-  create(): string{
-    return "create!";
-  }
+    @Get()
+    async findAll(): Promise<Cat[]>{
+        return this.catService.findAll();
+    }
+    @Post()
+    async create(@Body() createCatDto: CreateCatDto){
+        this.catService.create(createCatDto);
+    }
 }
