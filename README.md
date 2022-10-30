@@ -75,10 +75,20 @@ Nest is [MIT licensed](LICENSE).
 NestJSの練習です！
 CLIを使ってコントローラ(/cats)を作りたい!
 ```bash
-$nest g controller cats
+$ nest g controller cats
 ```
 
 CLIでは、以下のコマンドでサービスを作れる。
 ```bash
 $ nest g service cats
 ```
+
+CLIでは、以下のコマンドでサービスを作れる。
+```bash
+$ nest g service cats
+```
+
+CLIでは、以下のコマンドでモジュールを作れる。
+```bash
+$ nest g module cats  
+```  
