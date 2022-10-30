@@ -83,11 +83,6 @@ CLIでは、以下のコマンドでサービスを作れる。
 $ nest g service cats
 ```
 
-CLIでは、以下のコマンドでサービスを作れる。
-```bash
-$ nest g service cats
-```
-
 CLIでは、以下のコマンドでモジュールを作れる。
 ```bash
 $ nest g module cats  
