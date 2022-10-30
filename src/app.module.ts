@@ -1,14 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsController } from './cats/cats.controller';
-import { CatsService } from './cats/cats.service';
+import { CatsModule } from './cats/cats.module';
+import { AuthModule } from './auth/auth.module';
+import { BookmarkModule } from './bookmark/bookmark.module';
 
 @Module({
-  imports: [],
+  //下位のモジュールを登録
+  imports: [CatsModule, AuthModule, BookmarkModule],
   //コントローラを登録
-  controllers: [AppController, CatsController],
+  controllers: [AppController],
   //プロバイダを登録
-  providers: [AppService, CatsService],
+  providers: [AppService],
 })
 export class AppModule {}
