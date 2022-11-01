@@ -87,3 +87,21 @@ CLIでは、以下のコマンドでモジュールを作れる。
 ```bash
 $ nest g module cats  
 ```  
+# dockercompose
+```bash
+$ docker compose up dev-db -d 
+``` 
+
+#prisma install
+```bash
+$ npm install prisma
+
+$ npm install @prisma/client
+```
+
+.envとprisma/schema.prismaが生成される
+```bash
+$ npx prisma init
+```
+
+
