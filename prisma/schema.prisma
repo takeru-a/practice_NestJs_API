@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// modelの定義 
+
+model User{
+  //自動でインクリメントされる
+  id Int @id @default(autoincrement())
+  //DB作成時の時刻
+  createdAt DateTime @default(now())
+  //更新時の時刻
+  updateedAt DateTime @updatedAt
+
+  email String
+  //password
+  hash String
+
+  firstName String?
+  lastName String?
+
+}
+model Bookmark{
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updateedAt DateTime @updatedAt
+
+  title String
+  description String?
+  link String
+}
